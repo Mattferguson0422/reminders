@@ -12,8 +12,15 @@
 |
 */
 
+
+// First part of authentication
+Route::get('/', function () {
+    return view('welcome');
+});
+Auth::routes();
+
 // First Pages just messing around
-Route::get('/', 'PagesController@home');
+Route::get('home', 'PagesController@home');
 Route::get('about', 'PagesController@about');
 Route::get('trump', 'PagesController@trump');
 

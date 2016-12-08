@@ -31,6 +31,14 @@ $page = "reminders";
             <button type="submit" name="button" class="btn btn-primary">Add</button>
         </div>
       </form>
+      @if (count($errors))
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      @endif
+      <p class="goback"><a href="/home">Go Back &#8629;</p>
     </div>
 
   </div>
