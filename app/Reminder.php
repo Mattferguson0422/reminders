@@ -8,6 +8,11 @@ class Reminder extends Model
 {
     public function tasks()
     {
-      return $this->hasMany('App\Task');
+      return $this->hasMany(Task::class);
+    }
+
+    public function addTask(Task $task)
+    {
+      return $this->tasks()->save($task);
     }
 }

@@ -10,6 +10,11 @@ class Task extends Model
 
     public function reminders()
     {
-    return $this->belongsTo('App\Reminder');
+      return $this->belongsTo(Reminder::class);
+    }
+
+    public function user()
+    {
+      return $this->belongsTo(User::class);
     }
 }

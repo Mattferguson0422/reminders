@@ -18,6 +18,9 @@ class RemindersController extends Controller
   // Show a specific reminder
   public function show(Reminder $reminder)
   {
+    // Eager Loading;
+    $reminder->load('tasks.user');
+
     return view('reminders.show', compact('reminder'));
   }
 

@@ -20,6 +20,8 @@ $page = "reminder-tasks";
             <button class="btn btn-primary">Delete</button>
           </form>
           <a href="/tasks/{{ $task->id }}/edit" class="btn">Edit</a>
+
+          <p class="by-user">Created by: {{ $task->user->name }}</p>
         </li>
       @endforeach
     </ul>
@@ -29,13 +31,19 @@ $page = "reminder-tasks";
     <form action="/reminders/{{ $reminder->id }}/tasks" method="POST">
       {{ csrf_field() }}
       <div class="form-group">
-          <input type="text" name="name" class="form-control">
+          <input type="text" name="name" class="form-control" value="{{ old('name')}}">
       </div>
       <div class="form-group">
           <button type="submit" name="button" class="btn btn-primary">Add</button>
       </div>
     </form>
-
+    @if (count($errors))
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    @endif
     <p class="goback"><a href="/reminders">Go Back &#8629;</p>
   </div>
 </div>
