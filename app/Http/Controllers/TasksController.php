@@ -11,11 +11,14 @@ class TasksController extends Controller
     // Post a Task
     public function store(Request $request, Reminder $reminder)
     {
-      $task = new Task;
+      $this->validate($request, [
+        'name' => 'required|unique:tasks'
+      ]);
 
-      $task->name = $request->name;
+      $task = new Task($request->all());
+      $task->user_id = 1;
 
-      $reminder->tasks()->save($task);
+      $reminder->addTask($task);
 
       return back();
     }
