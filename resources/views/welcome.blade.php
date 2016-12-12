@@ -2,9 +2,11 @@
 $page = "home";
 ?>
 @extends('layout/app')
-
+<!-- Keep page for testing purposes -->
 @section('content')
     <div class="welcome-area">
-      <h1>Welcome to the Ferguson Family Lists</h1>
+      @if(Session::has('status'))
+      <h1>{{ Session::get('status') }}</h1>
+      @endif
     </div>
 @stop

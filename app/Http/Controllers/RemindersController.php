@@ -18,11 +18,6 @@ class RemindersController extends Controller
       $this->middleware('auth');
   }
 
-  /**
-   * Show the application dashboard.
-   *
-   * @return \Illuminate\Http\Response
-   */
 
   //Show all Reminders
   public function index()

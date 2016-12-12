@@ -14,13 +14,8 @@ class PagesController extends Controller
   public function __construct()
   {
       $this->middleware('auth');
+      $this->middleware('admin', ['only' => ['about']]);
   }
-
-  /**
-   * Show the application dashboard.
-   *
-   * @return \Illuminate\Http\Response
-   */
 
     //Home Page
     public function home() {

@@ -1,11 +1,29 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img width="150"src="https://laravel.com/laravel.png"></a></p>
+## My Laravel Reminders and Tasks project
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Needed to run
+- PHP
+- [Composer](https://getcomposer.org/Composer)
+- [Node](https://nodejs.org/en/download/)
+
+More info for installation of this version
+[Laravel 5.3](https://laravel.com/docs/5.3)
+
+After Cloning Project...
+
+Create .env file based off of the .env.example file.
+Delete lines 7 through 9 in .env file
+- delete DB_CONNECTION=mysql
+- delete DB_HOST=127.0.0.1
+- delete DB_PORT=3306
+
+From the command line within root of project run the following...
+- <code>composer install</code>
+- <code>npm install</code>
+- <code>php artisan key:generate</code>
+- <code>touch database/database.sqlite</code>
+- <code>php artisan migrate</code>
+- <code>php artisan serve</code>
+- <code>Open server</code>
 
 ## About Laravel
 
