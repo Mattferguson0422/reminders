@@ -7692,6 +7692,11 @@ h1 {
   text-transform: capitalize;
 }
 
+.welcome-area {
+  padding: 15% 0;
+  text-align: center;
+}
+
 .list-group-item:after {
   content: '';
   display: table;

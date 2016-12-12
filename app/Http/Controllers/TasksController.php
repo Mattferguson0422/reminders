@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 
 class TasksController extends Controller
 {
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
     // Post a Task
     public function store(Request $request, Reminder $reminder)
     {
@@ -16,7 +26,7 @@ class TasksController extends Controller
       ]);
 
       $task = new Task($request->all());
-      $task->user_id = 1;
+      $task->user_id = $request->user()->id;
 
       $reminder->addTask($task);
 

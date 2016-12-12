@@ -6,9 +6,20 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
+  /**
+   * Create a new controller instance.
+   *
+   * @return void
+   */
+  public function __construct()
+  {
+      $this->middleware('auth');
+      $this->middleware('admin', ['only' => ['about']]);
+  }
+
     //Home Page
     public function home() {
-        return view('welcome');
+        return view('home');
     }
 
     //About Page
