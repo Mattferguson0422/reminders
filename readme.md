@@ -10,11 +10,14 @@ More info for installation of this version
 
 After Cloning Project...
 
+cd into project
+
 Create .env file based off of the .env.example file.
-Delete lines 7 through 9 in .env file
+Delete lines 7 through 10 in .env file
 - delete DB_CONNECTION=mysql
 - delete DB_HOST=127.0.0.1
 - delete DB_PORT=3306
+- delete DB_DATABASE=homestead
 
 From the command line within root of project run the following...
 - <code>composer install</code>
